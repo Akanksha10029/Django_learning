@@ -1,0 +1,11 @@
+body{
+    background-color: #08153d;
+    color:#ffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+h1{
+    color: rgb(153, 199, 239);
+}
