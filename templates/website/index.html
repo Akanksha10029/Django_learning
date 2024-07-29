@@ -1,13 +1,12 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Django</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
-<body>
-    <h1>python Django learning for frontend and backend</h1>
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %}
+Django Home Page
+{% endblock %}
+
+{% block content %}
+<div style="display: block;">
+    <h1>python Django learning for frontend and backend | Home page</h1>
+</div>
+{% endblock %}
+
