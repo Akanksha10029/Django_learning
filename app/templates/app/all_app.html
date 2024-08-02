@@ -1,13 +1,32 @@
+{% extends "all_app_chai_varieties.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>application</title>
-    <link rel="stylesheet" href="{% static 'all_app.css' %}">
-</head>
-<body>
-    <h1>This is my first application</h1>
-</body>
-</html>
+
+{% block title %}
+Django Chai Varieties Page
+{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl text-green-500">All Chai Varieties</h1>
+
+<div class="grid grid-cols-3 gap-4 m-4">
+    {% for chai in chais %}    
+    <div class="bg-amber-100 p-5 rounded-2xl shadow-black  shadow-2xl ">
+        <img class="rounded-2xl shadow-black shadow-2xl" src="{{chai.image.url}}" alt=""{{ chai.name }}"">
+        <h2 class="text-2xl mt-5 font-bold">{{chai.name}}</h2>
+        <a href="#">
+            <button type = "button" class="bg-amber-300 p-1.5 m-1 rounded  item-center justify-center w-20 text-green-800 font-bold">
+                {{chai.type}}-{{chai.id}}
+            </button>
+        </a>
+        
+    </div>
+    {% endfor %}    
+</div>
+{% endblock %}
+    
+
+
+
+
+
+

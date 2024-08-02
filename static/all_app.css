@@ -1,10 +1,28 @@
 body{
-    background-color: #4a0f8e;
-    color:#f8e2e2;
+    background-color: #2581f1;
+    color:#e92323;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items:flex-start;
+    justify-content:flex-start;
 }
-h1{
+nav{
+    display: flex;
+    justify-content:space-around;
+    width: 100%;
+    margin: 10px;
+}
+
+nav a {
+    color: #ffff;
+    text-decoration: none;
+    margin: 15px 50px;
+    border: 1px solid white;
+    border-radius: 20%;
+    padding: 14px;
+    width: 150px; /* Fixed width for uniform size */
+    text-align: center; 
+    box-sizing: border-box;
+}
+/* h1{
     color: rgb(153, 199, 239);
-}
+} */
