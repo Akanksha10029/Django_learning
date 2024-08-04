@@ -1,0 +1,46 @@
+{% extends "all_app_chai_varieties.html" %}
+
+{% block title %}
+Django Chai Detail Page
+{% endblock %}
+
+{% block content %}
+<h1 class="inline-flex items-center justify-center w-[100%] font-bold text-3xl text-green-500">Chai Details are available here</h1>
+
+<div class="relative w-full flex items-center justify-center ">
+    <div class="relative img_card flex items-center justify-center m-20">
+        <img class="w-full h-auto object-cover rounded-lg shadow-black shadow-2xl border-double border-4 border-sky-400" src="{{ chai.image.url }}" alt="{{ chai.name }}">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-2xl cursor-pointer">
+            <span class="text-center">Click to see full information</span>
+        </div>
+    </div>
+    <div class="hidden mt-4 font-bold text-red-800" id="info-{{ chai.id }}">
+        <h3><b>Chai name: </b>{{ chai.name }}</h3>
+        <h3><b>Chai Price(rs): </b>{{ chai.price }}</h3>
+        <h3><b>Chai Description: </b>{{ chai.description }}</h3>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.img_card').forEach(card => {
+        card.addEventListener('click', () => {
+            const info = card.parentElement.querySelector('div[id^="info-"]');
+            info.classList.toggle('hidden');
+        });
+    });
+</script>
+
+
+{% comment %} <div class="m-8 flex items-center justify-center">
+    <div class="w-[25%] bg-amber-100 p-3 rounded-2xl shadow-black shadow-2xl">
+        <img class="w-full h-auto object-cover rounded-lg" src="{{ chai.image.url }}" alt="{{ chai.name }}">
+    </div>
+</div>
+
+<div>
+    <h3><b>Chai name: </b>{{chai.name}}</h3>
+    <h3><b>Chai Price(rs): </b>{{chai.price}}</h3>
+    <h3><b>Chai Description: </b>{{chai.description}}</h3>
+</div> {% endcomment %}
+
+{% endblock %}

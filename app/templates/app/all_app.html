@@ -1,20 +1,19 @@
 {% extends "all_app_chai_varieties.html" %}
-{% load static %}
 
 {% block title %}
 Django Chai Varieties Page
 {% endblock %}
 
 {% block content %}
-<h1 class="text-3xl text-green-500">All Chai Varieties</h1>
+<h1 class="text-3xl text-green-500 flex items-center justify-center font-bold">All Chai Varieties</h1>
 
 <div class="grid grid-cols-3 gap-4 m-4">
     {% for chai in chais %}    
     <div class="bg-amber-100 p-5 rounded-2xl shadow-black  shadow-2xl ">
-        <img class="rounded-2xl shadow-black shadow-2xl" src="{{chai.image.url}}" alt=""{{ chai.name }}"">
+        <img class="w-full h-60 object-cover rounded-2xl shadow-black shadow-2xl" src="{{chai.image.url}}" alt=""{{ chai.name }}"">
         <h2 class="text-2xl mt-5 font-bold">{{chai.name}}</h2>
-        <a href="#">
-            <button type = "button" class="bg-amber-300 p-1.5 m-1 rounded  item-center justify-center w-20 text-green-800 font-bold">
+        <a href="{% url "chai_detail" chai.id %}">
+            <button type = "button" class="bg-amber-300 p-1.5 mt-3 rounded-2xl  item-center justify-center w-20 text-green-800 font-bold hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
                 {{chai.type}}-{{chai.id}}
             </button>
         </a>
@@ -23,10 +22,3 @@ Django Chai Varieties Page
     {% endfor %}    
 </div>
 {% endblock %}
-    
-
-
-
-
-
-

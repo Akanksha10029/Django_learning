@@ -11,7 +11,7 @@ class ChaiVariety(models.Model):
         ('Pl', 'Plain'),  
     ]
     name = models.CharField(max_length=255)
-    description = models.TextField()
+    description = models.TextField(default="empty")
     price = models.DecimalField(max_digits=5, decimal_places=2)
     image = models.ImageField(upload_to='chai_varieties/')
     date_added = models.DateTimeField(default=timezone.now)
