@@ -14,8 +14,18 @@
     {% tailwind_css %}
 </head>
 <body class="bg-amber-50">
-    <nav class="border-solid border-2 border-orange-500 rounded-2xl p-4 m-2">
-        <a class="text-blue-950" href="{% url 'all_app' %}">Chai varieties</a> 
+    <nav class="border-solid border-2 border-orange-500 rounded-2xl p-4 m-2 flex justify-between">
+        <button class="text-blue-800 onclick="goBack()">Back</button>
+        <a href="{% url 'home'%}">Home</a> 
+        <a class="text-blue-950" href="{% url 'all_app' %}">Chai varieties</a>
+        <a href="{% url 'app_order' %}">Orders</a>
     </nav>
     {% block content %}{% endblock %}
+    <script>
+        function goBack() {
+            alert("back button is clicked");
+        window.history.back();
+        }
+    </script>
+
 </body>    
